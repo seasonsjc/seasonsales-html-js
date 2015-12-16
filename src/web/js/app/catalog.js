@@ -43,8 +43,8 @@ App.Catalog = (function() {
 App.CatalogService = (function() {
     return {
 
-        list: function(options) {
-
+        list: function(options, callback ) {
+            $.getJSON( '/js/app/products.json' , callback  );
         },
 
         add: function(catalog) {

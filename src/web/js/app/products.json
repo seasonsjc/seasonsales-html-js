@@ -1,0 +1,23 @@
+{ "products" : [
+      {    "name" :"Academia Java 1"
+          ,"availableUntil" : "2016-12-12"
+         , "price" : 5000.00}
+    ,{    "name" :"Academia Java 2"
+              ,"availableUntil" : "2016-12-12"
+             , "price" : 5100.00}
+    ,{    "name" :"Academia Java 3"
+              ,"availableUntil" : "2016-12-12"
+             , "price" : 5200.00}
+    ,{    "name" :"Academia Java 4"
+              ,"availableUntil" : "2016-12-12"
+             , "price" : 5300.00}
+    ,{    "name" :"Academia Java 5"
+              ,"availableUntil" : "2016-12-12"
+             , "price" : 5400.00}
+    ,{    "name" :"Academia Java 6"
+              ,"availableUntil" : "2016-12-12"
+             , "price" : 5500.00}
+    ,{    "name" :"Academia Java 7"
+              ,"availableUntil" : "2016-12-12"
+             , "price" : 5600.00}
+]}
