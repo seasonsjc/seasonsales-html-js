@@ -2,13 +2,14 @@
 
 var App = App || {};
 
-App.CatalogUi = (function() {
+App.CatalogUi = (function(){
 
-    function CatalogUi() {}
-    CatalogUi.prototype.show = function() {
+    function CatalogUi () {
+    }
+
+    CatalogUi.prototype.show = function(){
 
         var catalogId = '#catalog';
-
 
     }
 
@@ -29,19 +30,17 @@ App.Catalog = (function() {
         }
     }
 
-    Catalog.prototype.all = function() {
+    Catalog.prototype.all = function(){
 
     }
 
     return Catalog;
 })();
 
-
 /**
  *
  */
 App.CatalogService = (function() {
-
     return {
 
         list: function(options) {
@@ -49,11 +48,6 @@ App.CatalogService = (function() {
         },
 
         add: function(catalog) {
-
-        },
-
-
-
-
+        }
     };
 })();
