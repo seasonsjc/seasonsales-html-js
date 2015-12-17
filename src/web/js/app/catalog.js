@@ -1,3 +1,4 @@
+
 'use strict';
 
 var App = App || {};
@@ -8,10 +9,42 @@ App.CatalogUi = (function(){
     }
 
     CatalogUi.prototype.show = function(){
-
         var catalogId = '#catalog';
 
+        var catalog = new App.Catalog();
+
+        catalog.all ( function (products) {
+            $(catalogId).append (
+              '<div class="plan">'
+            + '    <div class="title">'
+            + '        FREE PLAN'
+            + '        <div class="price"><span class="currency">$</span>0<span class="period">/ MO</span></div>'
+            + '        <a class="btn btn-clear btn-small" href="#">AND GET FREE MONTH</a>'
+            + '    </div>'
+            + ''
+            + '    <div class="description">'
+            + '        <div class="description-box">'
+            + '            <span class="fui-cmd"></span> 10,000 messages'
+            + '        </div>'
+            + '        <div class="description-box">'
+            + '            <span class="fui-mic"></span> <b>unlimited</b> data'
+            + '        </div>'
+            + '        <div class="description-box">'
+            + '            <span class="fui-user"></span> <b>unlimited</b> users'
+            + '        </div>'
+            + '        <div class="description-box">'
+            + '            <span class="fui-windows"></span> first 10 day free'
+            + '        </div>'
+            + '    </div>'
+            + '</div>');
+
+
+
+        });
+
     }
+
+
 
     return CatalogUi;
 })();
@@ -23,15 +56,16 @@ App.CatalogUi = (function(){
 App.Catalog = (function() {
 
     var FIELDS = ['name', 'product', 'availableUntil', 'price'];
+    var service = App.CatalogService;
 
     function Catalog(options) {
-        for (var i = 0; i < fields.length; i++) {
-            this[FIELDS[i]] = options[FIELDS[i]] || undefined;
-        }
+        /*for (var i = 0; i < FIELDS.length; i++) {
+            this[FIELDS[i]] = options[FIELDS[i]] || null;
+        }*/
     }
 
-    Catalog.prototype.all = function(){
-
+    Catalog.prototype.all = function(callback){
+        service.list( callback ) ;
     }
 
     return Catalog;
@@ -43,7 +77,7 @@ App.Catalog = (function() {
 App.CatalogService = (function() {
     return {
 
-        list: function(options, callback ) {
+        list: function( callback ) {
             $.getJSON( '/js/app/products.json' , callback  );
         },
 
